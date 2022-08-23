@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.werinton.kafka.connect</groupId>
+    <artifactId>kafka-connect-source-github</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>kafka-connect-source-github</name>
+    <description>A Kafka Connect Connector for kafka-connect-source-github</description>
+
+    <properties>
+        <kafka.version>3.2.1</kafka.version>
+        <junit.version>4.12</junit.version>
+        <connect.utils.version>0.7-SNAPSHOT</connect.utils.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>connect-api</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.mashape.unirest/unirest-java -->
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+<!--
+Uncomment this second to generate a package to deploy to the Confluent Hub.
+            <plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-connect-maven-plugin</artifactId>
+                <configuration>
+                    <confluentControlCenterIntegration>true</confluentControlCenterIntegration>
+                    <documentationUrl>https://jcustenborder.github.io/kafka-connect-documentation/</documentationUrl>
+                    <componentTypes>
+                        <componentType>source</componentType>
+                        <componentType>sink</componentType>
+                        <componentType>transform</componentType>
+                        <componentType>converter</componentType>
+                    </componentTypes>
+                    <tags>
+                        <tag>kafka-connect-source-github</tag>
+                    </tags>
+                    <title>Kafka Connect kafka-connect-source-github</title>
+                    <supportUrl>${pom.issueManagement.url}</supportUrl>
+                    <supportSummary>Support provided through community involvement.</supportSummary>
+                    <excludes>
+                        <exclude>org.reflections:reflections</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+-->
+        </plugins>
+    </build>
+
+
+</project>
